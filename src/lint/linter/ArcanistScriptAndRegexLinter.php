@@ -376,7 +376,7 @@ final class ArcanistScriptAndRegexLinter extends ArcanistLinter {
       'disabled' => ArcanistLintSeverity::SEVERITY_DISABLED,
     );
 
-    $severity_name = strtolower(idx($match, 'severity'));
+    $severity_name = strtolower(idx($match, 'severity') ?: '');
 
     foreach ($map as $name => $severity) {
       if (!empty($match[$name])) {
